@@ -2,7 +2,7 @@
 
 ##### SSH into ASUS router and execute the following
 
-```bash
+```shell
 cd /jffs
 mkdir scripts
 cd scripts
@@ -20,10 +20,22 @@ nvram commit
 reboot
 ```
 
-##### After reboot, open pingcheck.sh and copy in contents of its file 
+##### After reboot, open pingcheck.sh
 
-```bash
+```shell
 vi pingcheck.sh
+```
+
+###### Paste in content
+
+```shell 
+if ! ping -w 10 -c 10 1.1.1.1 > /dev/null; then
+sleep 240
+#wait 4 minutes in case of another router in reboot cycle.
+if ! ping -w 10 -c 10 1.1.1.1 > /dev/null; then
+reboot
+fi
+fi
 ```
 
 ##### Open services-start and copy in contents of its file

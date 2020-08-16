@@ -60,3 +60,15 @@ nvram commit
 ```shell
 cru l
 ```
+
+#### Or add the scheduled cron job manually 
+
+```shell
+cru a NoPingReboot "*/15 * * * * /jffs/scripts/pingcheck.sh"
+```
+
+#### Verify job added
+
+```shell
+cru l
+```

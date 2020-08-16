@@ -41,6 +41,13 @@ fi
 ##### Open services-start and copy in contents of its file
 
 ```shell
+#!/bin/sh
+cru a NoPingReboot "*/15 * * * * /jffs/scripts/pingcheck.sh"
+```
+
+##### Commit services-start to nvram to run cron upon reboot
+
+```shell
 nvram set jffs2_exec="/jffs/scripts/services-start"
 nvram commit
 ````

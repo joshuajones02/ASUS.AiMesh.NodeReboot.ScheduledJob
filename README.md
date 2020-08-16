@@ -51,3 +51,9 @@ cru a NoPingReboot "*/15 * * * * /jffs/scripts/pingcheck.sh"
 nvram set jffs2_exec="/jffs/scripts/services-start"
 nvram commit
 ````
+
+#### To verify, reboot again and check cron
+
+```shell
+cru l
+```

@@ -10,7 +10,7 @@ touch pingcheck.sh
 touch services-start
 ```
 
-#### Enable jffs2
+#### Enable jffs2 executing the following commands
 ```shell
 nvram set jffs2_on=1
 nvram set jffs2_enable=1
@@ -29,6 +29,7 @@ vi pingcheck.sh
 #### Paste in content
 
 ```shell 
+#!/bin/sh
 if ! ping -w 10 -c 10 1.1.1.1 > /dev/null; then
 sleep 240
 #wait 4 minutes in case of another router in reboot cycle.

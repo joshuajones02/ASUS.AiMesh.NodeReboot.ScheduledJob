@@ -8,6 +8,8 @@ mkdir scripts
 cd scripts
 touch pingcheck.sh
 touch services-start
+chmod a+x /jffs/scripts/pingcheck.sh
+chmod a+x /jffs/scripts/services-start
 ```
 
 #### Enable jffs2 executing the following commands

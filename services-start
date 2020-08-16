@@ -1,0 +1,2 @@
+#!/bin/sh
+cru a NoPingReboot "*/15 * * * * /jffs/scripts/pingcheck.sh"

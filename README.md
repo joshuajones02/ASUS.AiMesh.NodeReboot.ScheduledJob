@@ -1,6 +1,6 @@
-### Start
+## Start
 
-##### SSH into ASUS router and execute the following
+#### SSH into ASUS router and execute the following
 
 ```shell
 cd /jffs
@@ -10,7 +10,7 @@ touch pingcheck.sh
 touch services-start
 ```
 
-##### Enable jffs2
+#### Enable jffs2
 ```shell
 nvram set jffs2_on=1
 nvram set jffs2_enable=1
@@ -20,13 +20,13 @@ nvram commit
 reboot
 ```
 
-##### After reboot, open pingcheck.sh
+#### After reboot, open pingcheck.sh
 
 ```shell
 vi pingcheck.sh
 ```
 
-###### Paste in content
+#### Paste in content
 
 ```shell 
 if ! ping -w 10 -c 10 1.1.1.1 > /dev/null; then
@@ -38,14 +38,14 @@ fi
 fi
 ```
 
-##### Open services-start and copy in contents of its file
+#### Open services-start and copy in contents of its file
 
 ```shell
 #!/bin/sh
 cru a NoPingReboot "*/15 * * * * /jffs/scripts/pingcheck.sh"
 ```
 
-##### Commit services-start to nvram to run cron upon reboot
+#### Commit services-start to nvram to run cron upon reboot
 
 ```shell
 nvram set jffs2_exec="/jffs/scripts/services-start"
